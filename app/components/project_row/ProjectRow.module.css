@@ -1,0 +1,91 @@
+.projectRow {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.techsRow {
+  align-content: flex-start;
+  justify-content: baseline;
+  padding-left: 10px;
+}
+
+.description {
+  text-align: left;
+  color: white;
+}
+.leftToRight {
+  margin-right: 50px;
+}
+.rightToLeft {
+  margin-left: 50px;
+}
+.techPadding {
+  padding-left: 50px !important;
+}
+.projectImages {
+  padding-top: 37px;
+  padding-left: 33px;
+  padding-right: 33px;
+  padding-bottom: 37px;
+  background-color: rgba(88, 170, 175, 1);
+  border-radius: 25px;
+}
+.prjoectName {
+  color: white;
+}
+
+.gallery {
+  padding: 50px;
+  background-color: "#58aaaf";
+  color: rgba(40, 75, 99, 1) !important;
+}
+
+.iphonesCol {
+  padding-left: 100px;
+}
+.linkTitle {
+  padding-top: 47px;
+  padding-left: 5px;
+  font-size: 20px;
+  font-weight: 400px;
+  color: white;
+}
+.linkImage {
+  padding-top: 13px;
+  padding-left: 18px;
+}
+
+.temp {
+  height: 200px;
+  width: 200px;
+}
+.techImageContainer {
+  width: 114px !important;
+  height: 114px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+@media (max-width: 768px) {
+  .prjoectName {
+    font-size: 24px;
+    font-weight: 700;
+  }
+  .descriptiopn {
+    font-size: 16px;
+    text-align: justify;
+  }
+  .gallery {
+    justify-content: center;
+    justify-items: center;
+    background-color: #58aaaf;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: -54px !important;
+    margin-right: -54px !important;
+  }
+
+  .techImageContainer {
+    width: 60px !important;
+    height: 60px;
+  }
+}

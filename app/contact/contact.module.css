@@ -1,0 +1,82 @@
+.background {
+  background-color: rgba(40, 75, 99, 1);
+}
+.centeredRow {
+  justify-content: center;
+  align-items: center;
+}
+.formContainer {
+  background-color: white;
+  border-radius: 10px;
+  margin-top: 20px;
+  padding: 25px;
+  width: 80% !important;
+  text-align: left;
+}
+
+.formTitle {
+  color: black;
+  margin-top: 6px;
+  font-weight: "bold";
+  font-size: 28px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+.fieldTitle {
+  font-weight: 500;
+  color: black;
+  margin-right: 20px;
+}
+
+.submitBtn {
+  margin-top: 20px;
+  height: 40px;
+  width: 160px;
+  background-color: rgba(40, 75, 99, 1);
+  border-radius: 10px;
+}
+.submitBtn:hover {
+  background-color: grey;
+}
+.btnTitle {
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  color: white;
+}
+.btnTitle:hover {
+  color: black;
+}
+
+.center {
+  margin: 0 auto;
+  width: 80%;
+}
+.mainText {
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 200px;
+}
+.theText {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.emailInput {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.inputGroup {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+@media (max-width: 768px) {
+  .formContainer {
+    margin-top: 25px !important;
+    width: 95% !important;
+    height: 100% !important;
+    text-align: center;
+  }
+}

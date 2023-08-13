@@ -1,0 +1,16 @@
+.mainTitle {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  padding-bottom: 40px;
+}
+
+.sectionRow {
+  padding-top: 106px;
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 30px;
+  }
+}

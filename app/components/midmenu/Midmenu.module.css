@@ -1,0 +1,17 @@
+.midmenuTitle {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+}
+.midmenuTitleSelectd {
+  color: white;
+  font-weight: 700;
+  font-size: 40px;
+  text-decoration-line: underline;
+}
+
+@media (max-width: 768px) {
+  .midmenuTitle {
+    font-size: 30px;
+  }
+}

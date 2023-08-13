@@ -1,0 +1,15 @@
+.techImg {
+  width: 114px;
+  height: 114px;
+  align-self: center;
+  justify-self: center;
+}
+
+@media (max-width: 768px) {
+  .techImg {
+    width: 60px;
+    height: 60px;
+    align-self: center;
+    justify-self: center;
+  }
+}

@@ -1,0 +1,14 @@
+.btnSocial {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 8px;
+  height: auto;
+  width: 50px;
+  height: auto;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .btnSociall {
+    width: 68px !important;
+  }
+}
