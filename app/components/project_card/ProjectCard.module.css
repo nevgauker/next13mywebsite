@@ -1,0 +1,24 @@
+.projectCard {
+  background-color: rgba(88, 170, 175, 1);
+  margin: 20px;
+}
+
+.cardTopImage {
+  padding: 20px;
+}
+.cardTitle {
+  color: rgba(40, 75, 99, 1);
+}
+.cardText {
+  color: rgba(40, 75, 99, 1);
+}
+.techRow {
+  align-items: center;
+  justify-content: start;
+}
+.techImg {
+  padding: 5px;
+}
+.selectorImg {
+  margin: 5px;
+}
