@@ -29,7 +29,7 @@ import ProjectRow from "./components/project_row/ProjectRow";
 import Social from "./components/social/Social";
 import SectionTitle from "./components/section_title/SectionTitle";
 import Midmenu from "./components/midmenu/Midmenu";
-
+import ProjectCard from "./components/project_card/ProjectCard";
 // import ContactSection from "./components/contact_section/ContactSection";
 
 import { useState, useEffect } from "react";
@@ -56,8 +56,7 @@ function MainScreen() {
   const [client, setClient] = useState(0);
   const [showModal, setShowModal] = useState(false);
 
-    const [selected, setSelected] = useState(0);
-
+  const [selected, setSelected] = useState(0);
 
   const clients = [
     {
@@ -89,22 +88,27 @@ function MainScreen() {
           width={width}
         />
         <ProjectRow project={willerProject} leftToRight={true} width={width} />
-        
       </>
     );
-  };
+  }
 
-   function renderUsecases() {
+  function renderUsecases() {
     return (
-      <>
-        <ProjectRow project={chatProject} leftToRight={false} width={width} />
+      <Row>
+        <ProjectCard project={chatProject} />
+        <ProjectCard project={bmiProject} />
+        <ProjectCard project={storeProject} />
+        <ProjectCard project={blogProject} />
+        <ProjectCard project={airbnbProject} />
+
+        {/* <ProjectRow project={chatProject} leftToRight={false} width={width} />
         <ProjectRow project={bmiProject} leftToRight={true} width={width} />
         <ProjectRow project={storeProject} leftToRight={false} width={width} />
         <ProjectRow project={blogProject} leftToRight={true} width={width} />
-        <ProjectRow project={airbnbProject} leftToRight={false} width={width} />
-      </>
+        <ProjectRow project={airbnbProject} leftToRight={false} width={width} /> */}
+      </Row>
     );
-  };
+  }
 
   useEffect(() => {
     setWidth(window.innerWidth);
@@ -168,15 +172,21 @@ function MainScreen() {
           <SectionTitle title={"What clients are saying..."} />
           <Row className={styles.feedbackRow}>
             <Col className={styles.changeCol}>
-                <Image  className={styles.changeFeedbackImg} src={left} height={50} width={50} alt="left arrowhead"  onClick={() => {
+              <Image
+                className={styles.changeFeedbackImg}
+                src={left}
+                height={50}
+                width={50}
+                alt="left arrowhead"
+                onClick={() => {
                   if (client === 0) {
                     setClient(2);
                   } else {
                     setClient(client - 1);
                   }
                   setShowModal(!showModal);
-                }}/>
-            
+                }}
+              />
             </Col>
             <Col xs={7} md={10}>
               <p className={styles.refText}>
@@ -186,17 +196,21 @@ function MainScreen() {
             </Col>
 
             <Col className={styles.changeCol}>
-
-
-               <Image  className={styles.changeFeedbackImg} src={right} height={50} width={50} alt="righ arrowhead"  onClick={() => {
+              <Image
+                className={styles.changeFeedbackImg}
+                src={right}
+                height={50}
+                width={50}
+                alt="righ arrowhead"
+                onClick={() => {
                   if (client === 2) {
                     setClient(0);
                   } else {
                     setClient(client + 1);
                   }
                   setShowModal(!showModal);
-                }}/>
-              
+                }}
+              />
             </Col>
           </Row>
 
@@ -287,8 +301,12 @@ function MainScreen() {
             </Col>
           </Row>
 
-          <Midmenu titles={["Projects", "Use Cases"]} selected={selected} setSelected={setSelected} />
-          {selected ==  0 ? renderProjects() : renderUsecases()}
+          <Midmenu
+            titles={["Projects", "Use Cases"]}
+            selected={selected}
+            setSelected={setSelected}
+          />
+          {selected == 0 ? renderProjects() : renderUsecases()}
         </Col>
 
         <footer>

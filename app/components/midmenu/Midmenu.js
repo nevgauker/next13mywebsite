@@ -2,7 +2,7 @@ import { Col, Row } from "react-bootstrap/";
 import styles from "./Midmenu.module.css";
 
 function Midmenu(props) {
-  const { titles,selected,setSelected } = props;
+  const { titles, selected, setSelected } = props;
   return (
     <Row>
       {titles.map((title) => {
