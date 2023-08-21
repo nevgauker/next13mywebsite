@@ -78,17 +78,12 @@ function MainScreen() {
 
   function renderProjects() {
     return (
-      <>
-        <ProjectRow project={thingsProject} leftToRight={false} width={width} />
-
-        <ProjectRow project={duedoProject} leftToRight={true} width={width} />
-        <ProjectRow
-          project={expertxProject}
-          leftToRight={false}
-          width={width}
-        />
-        <ProjectRow project={willerProject} leftToRight={true} width={width} />
-      </>
+      <Row>
+        <ProjectCard project={thingsProject} />
+        <ProjectCard project={duedoProject} />
+        <ProjectCard project={expertxProject} />
+        <ProjectCard project={willerProject} />
+      </Row>
     );
   }
 
@@ -100,12 +95,6 @@ function MainScreen() {
         <ProjectCard project={storeProject} />
         <ProjectCard project={blogProject} />
         <ProjectCard project={airbnbProject} />
-
-        {/* <ProjectRow project={chatProject} leftToRight={false} width={width} />
-        <ProjectRow project={bmiProject} leftToRight={true} width={width} />
-        <ProjectRow project={storeProject} leftToRight={false} width={width} />
-        <ProjectRow project={blogProject} leftToRight={true} width={width} />
-        <ProjectRow project={airbnbProject} leftToRight={false} width={width} /> */}
       </Row>
     );
   }
@@ -167,7 +156,7 @@ function MainScreen() {
           </Row>
           <SectionTitle title={"What clients are saying..."} />
           <Row className={styles.feedbackRow}>
-            <Col className={styles.changeCol}>
+            <Col className={styles.changeCol}  xs={1}>
               <Image
                 className={styles.changeFeedbackImg}
                 src={left}
@@ -184,14 +173,14 @@ function MainScreen() {
                 }}
               />
             </Col>
-            <Col xs={7} md={10}>
+            <Col xs={10} md={10}>
               <p className={styles.refText}>
                 <q>{clients[client].feedback}</q>
               </p>
               <h3 className={styles.refName}>{clients[client].name}</h3>
             </Col>
 
-            <Col className={styles.changeCol}>
+            <Col className={styles.changeCol} xs={1}>
               <Image
                 className={styles.changeFeedbackImg}
                 src={right}

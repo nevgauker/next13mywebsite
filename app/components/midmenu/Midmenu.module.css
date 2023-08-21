@@ -14,4 +14,10 @@
   .midmenuTitle {
     font-size: 30px;
   }
+  .midmenuTitleSelectd {
+    font-size: 30px;
+  }
+  .mainRow{
+    margin-top: 20px;
+  }
 }

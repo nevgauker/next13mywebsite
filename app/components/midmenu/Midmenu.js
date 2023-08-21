@@ -4,12 +4,12 @@ import styles from "./Midmenu.module.css";
 function Midmenu(props) {
   const { titles, selected, setSelected } = props;
   return (
-    <Row>
+    <Row className={styles.mainRow}>
       {titles.map((title) => {
         const index = titles.indexOf(title);
 
         return (
-          <Col md={3} key={index}>
+          <Col md={3} xs={6} key={index}>
             {index === selected ? (
               <h2
                 className={styles.midmenuTitleSelectd}

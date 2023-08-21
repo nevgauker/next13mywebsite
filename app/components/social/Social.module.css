@@ -6,7 +6,9 @@
   height: auto;
   border: none;
 }
-
+.emailImg{
+  padding: auto;
+}
 @media (max-width: 768px) {
   .btnSociall {
     width: 68px !important;
