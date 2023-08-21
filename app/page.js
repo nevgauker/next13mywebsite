@@ -121,10 +121,6 @@ function MainScreen() {
 
   return (
     <main className={styles.bg}>
-      <NextSeo
-        title="Full Stack Developer"
-        description="Rotem Nevgauker - Experienced IOS and Full  Stack Developer. Here you find  all the information about me and how to reach me."
-      />
       <Container>
         <Col className={styles.mobilePadding}>
           <Row>

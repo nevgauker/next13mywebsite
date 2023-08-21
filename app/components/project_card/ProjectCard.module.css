@@ -1,5 +1,7 @@
 .projectCard {
   background-color: rgba(88, 170, 175, 1);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
   margin: 20px;
 }
 
@@ -7,10 +9,10 @@
   padding: 20px;
 }
 .cardTitle {
-  color: rgba(40, 75, 99, 1);
+  color: black;
 }
 .cardText {
-  color: rgba(40, 75, 99, 1);
+  color: black;
 }
 .techRow {
   align-items: center;
@@ -22,3 +24,9 @@
 .selectorImg {
   margin: 5px;
 }
+
+.linkImage {
+  padding-top: 13px;
+  padding-left: 18px;
+}
+

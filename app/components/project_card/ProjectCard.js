@@ -4,11 +4,25 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+
+import link from "../../../public/images/link.png";
+import store from "../../../public/images/store.png";
+import github from "../../../public/images/github.png";
+
 import Image from "next/image";
 import ImageCard from "../image_card/ImageCard";
-
+import { useState } from "react";
 function ProjectCard({ project }) {
   const { projectName, descriptionText, image1, image2 } = project;
+  const [selectedImage, setSelectedImage] = useState(1);
+
+
+
+  const noLinks = project.stsore == null
+    && project.github == null
+    && project.link === null;
+
+
   function renderTech(t) {
     return (
       <div className={styles.techImageContainer}>
@@ -20,7 +34,7 @@ function ProjectCard({ project }) {
   return (
     <Card style={{ width: "18rem" }} className={styles.projectCard}>
       <Image
-        src={image1}
+        src={selectedImage === 1 ? image1 : image2}
         alt="project image 1"
         layout="responsive"
         className={styles.cardTopImage}
@@ -33,8 +47,10 @@ function ProjectCard({ project }) {
             height={40}
             src={image1}
             alt="project image 1"
+            onClick={() => setSelectedImage(1)}
           />
-          <hr />
+          {selectedImage === 1 ?  <hr /> : null}
+         
         </Col>
         <Col xs={2}>
           <Image
@@ -42,7 +58,10 @@ function ProjectCard({ project }) {
             height={40}
             src={image2}
             alt="project image 2"
+            onClick={() => setSelectedImage(2)}
+
           />
+          {selectedImage === 2 ?  <hr /> : null}
         </Col>
       </Row>
 
@@ -64,7 +83,49 @@ function ProjectCard({ project }) {
             ))}
           </Col>
         </Row>
-        <Button variant="primary">Go somewhere</Button>
+        
+        
+        {noLinks ? <></> :
+          <Row className="linksRow">
+            <h7>Links: </h7>
+            {project.github != null ? (
+              <a href={project.github}>
+                <Image
+                  height={40}
+                  width={40}
+                  className={["img-fluid", styles.linkImage]}
+                  src={github}
+                  alt="github"
+                ></Image>
+              </a>
+            ) : null}
+            {project.link != null ? (
+              <a href={project.link}>
+                <Image
+                  height={40}
+                  width={40}
+                  className={["img-fluid", styles.linkImage]}
+                  src={link}
+                  alt="link"
+                ></Image>
+              </a>
+            ) : null}
+            {project.store != null ? (
+              <a href={project.store}>
+                <Image
+                  height={40}
+                  width={40}
+                  className={["img-fluid", styles.linkImage]}
+                  src={store}
+                  alt="store"
+                ></Image>
+              </a>
+            ) : null}
+          </Row>
+        }
+        
+        
+        
       </Card.Body>
     </Card>
   );
