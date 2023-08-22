@@ -12,6 +12,9 @@ import github from "../../../public/images/github.png";
 import Image from "next/image";
 import ImageCard from "../image_card/ImageCard";
 import { useState } from "react";
+
+import { motion, AnimatePresence } from 'framer-motion';
+
 function ProjectCard({ project }) {
   const { projectName, descriptionText, image1, image2 } = project;
   const [selectedImage, setSelectedImage] = useState(1);
@@ -33,12 +36,24 @@ function ProjectCard({ project }) {
 
   return (
     <Card style={{ width: "18rem" }} className={styles.projectCard}>
-      <Image
-        src={selectedImage === 1 ? image1 : image2}
-        alt="project image 1"
-        layout="responsive"
-        className={styles.cardTopImage}
-      />
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={selectedImage}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.25 }}
+        >
+
+           <Image
+            src={selectedImage === 1 ? image1 : image2}
+            alt="project image 1"
+            layout="responsive"
+            className={styles.cardTopImage}
+          />
+        </motion.div>
+      </AnimatePresence>
+     
 
       <Row>
         <Col xs={2}>
@@ -50,7 +65,6 @@ function ProjectCard({ project }) {
             onClick={() => setSelectedImage(1)}
           />
           {selectedImage === 1 ?  <hr /> : null}
-         
         </Col>
         <Col xs={2}>
           <Image

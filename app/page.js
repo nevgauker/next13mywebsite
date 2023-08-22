@@ -35,6 +35,7 @@ import ProjectCard from "./components/project_card/ProjectCard";
 import { useState, useEffect } from "react";
 
 import { NextSeo } from "next-seo";
+import { motion, AnimatePresence } from 'framer-motion';
 
 import {
   thingsProject,
@@ -174,10 +175,21 @@ function MainScreen() {
               />
             </Col>
             <Col xs={10} md={10}>
-              <p className={styles.refText}>
-                <q>{clients[client].feedback}</q>
-              </p>
-              <h3 className={styles.refName}>{clients[client].name}</h3>
+               <AnimatePresence mode="wait">
+                  <motion.div
+                    key={clients[client].name}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.25 }}
+                >
+                  <p className={styles.refText}>
+                    <q>{clients[client].feedback}</q>
+                  </p>
+                  <h3 className={styles.refName}>{clients[client].name}</h3>
+                </motion.div>
+              </AnimatePresence>
+            
             </Col>
 
             <Col className={styles.changeCol} xs={1}>
