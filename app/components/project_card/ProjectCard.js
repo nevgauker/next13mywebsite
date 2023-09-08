@@ -24,16 +24,7 @@ function ProjectCard({ project }) {
   const noLinks = project.stsore == null
     && project.github == null
     && project.link === null;
-
-
-  function renderTech(t) {
-    return (
-      <div className={styles.techImageContainer}>
-        <ImageCard title={t.name} img={t.image} key={t.name} width={20} />
-      </div>
-    );
-  }
-
+  
   return (
     <Card style={{ width: "18rem" }} className={styles.projectCard}>
       <AnimatePresence mode="wait">
@@ -92,7 +83,7 @@ function ProjectCard({ project }) {
                 src={t.image}
                 alt={t.name}
                 layout="cover"
-                key={projectName}
+                key={t.id}
               />
             ))}
           </Col>

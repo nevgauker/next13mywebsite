@@ -38,40 +38,40 @@ import things2 from "./public/images/projects/things/2.png";
 import Technology from "./app/model/Techology";
 import Project from "./app/model/Project";
 
-var willerText =
+const willerText =
   "Willer is a marketplace platform that allows people to take initiative  and ask what they are looking for and how much they are willing to pay for . This is a constantly changing system .  From payment  to free stuff  (favors), from crypto  based payment to normal / fiat payment .";
-var expertxText =
+const expertxText =
   "This App allows  trainers  and sport experts   to send feedback to their clients .They get videos from their clients and send them back a video with audio  and visual feedback about how they exercise  and how they can  improve.The app is part  of  a platform that includes a firebase  backend, and a React front end App.";
-var duedoText =
+const duedoText =
   "Duedo is a productivity network designed to help reduce the stress and “noise” associated with other modern collaboration systems.of managing as well as gamification to enhance well being.";
-var chatText =
+const chatText =
   "Another personal project of  mine with the purpose of integrating beautiful  chat ui  and some suficticate functionality .";
-var bmiText =
+const bmiText =
   "This is a very basic  project  in flutter  as  part of  my early work with flutter";
-var storeText =
+const storeText =
   "This is a  personal project for me in order to experiment  with the ecommerce world.  this is a functioning store including paypal payment integration ";
-var blogText =
+const blogText =
   "This is another personal project.  this is a blog based on node, mongo and express. This is my first node.js project which is not an api and i used mongodb atlas to store my db.";
-var airbnbText =
+const airbnbText =
   "This is an airbnb clone based on React Native and AWS Amplify.";
 
-var thingsText =
+const thingsText =
   "This is a platfom for 2-hand buying and selling in your close vacinity. Apps are avalible both google play and the app store. I maintain both dev and prodoction servers using heroku for the code, mongo atlas for the data and cloudinery for the storage.";
 
-var swiftTechnology = new Technology("Swift", swift);
-var objcTechnology = new Technology("Objective-c", objc);
-var flutterTechnology = new Technology("Flutter", flutter);
-var reactTechnology = new Technology("React", react);
-var nodeTechnology = new Technology("Node.js", node);
-var mongoTechnology = new Technology("Mongo.DB", mongo);
+const swiftTechnology = new Technology("1","Swift", swift);
+const objcTechnology = new Technology("2","Objective-c", objc);
+const flutterTechnology = new Technology("3","Flutter", flutter);
+const reactTechnology = new Technology("4","React", react);
+const nodeTechnology = new Technology("5","Node.js", node);
+const mongoTechnology = new Technology("6","Mongo.DB", mongo);
 
-var reactnativeTechnology = new Technology("React Native", reactNative);
-var firebaseTechnology = new Technology("Firebase", firebase);
+const reactnativeTechnology = new Technology("7","React Native", reactNative);
+const firebaseTechnology = new Technology("8","Firebase", firebase);
 
-var googleTechnology = new Technology("Google Cloud", googleCloud);
-var awsTechnology = new Technology("AWS", aws);
+const googleTechnology = new Technology("9","Google Cloud", googleCloud);
+const awsTechnology = new Technology("10","AWS", aws);
 
-export var expertxProject = new Project(
+export const expertxProject = new Project(
   "ExpertX",
   "Swift,Repplaykit,firebase,google-cloud",
   expertxText,
@@ -83,7 +83,7 @@ export var expertxProject = new Project(
   "https://apps.apple.com/us/app/expertx/id1504334527",
 );
 
-export var willerProject = new Project(
+export const willerProject = new Project(
   "Willer",
   "Swift,Objective-c,Parse,Firebase",
   willerText,
@@ -94,7 +94,7 @@ export var willerProject = new Project(
   null,
   null,
 );
-export var duedoProject = new Project(
+export const duedoProject = new Project(
   "DueDo",
   "Swift",
   duedoText,
@@ -105,7 +105,7 @@ export var duedoProject = new Project(
   null,
   "https://apps.apple.com/us/app/duedo/id1061979346",
 );
-export var chatProject = new Project(
+export const chatProject = new Project(
   "Chat UI",
   "Flutter,Firebase",
   chatText,
@@ -116,7 +116,7 @@ export var chatProject = new Project(
   null,
   null,
 );
-export var bmiProject = new Project(
+export const bmiProject = new Project(
   "Bmi Calculator",
   "Flutter",
   bmiText,
@@ -127,7 +127,7 @@ export var bmiProject = new Project(
   null,
   null,
 );
-export var storeProject = new Project(
+export const storeProject = new Project(
   "Store",
   "React.js,Node.js,MongoDB",
   storeText,
@@ -139,7 +139,7 @@ export var storeProject = new Project(
   null,
 );
 
-export var blogProject = new Project(
+export const blogProject = new Project(
   "Blog",
   "Node.js,MongoDB",
   blogText,
@@ -150,7 +150,7 @@ export var blogProject = new Project(
   null,
   null,
 );
-export var airbnbProject = new Project(
+export const airbnbProject = new Project(
   "Airbnb",
   "React Native,Amplify",
   airbnbText,
@@ -162,7 +162,7 @@ export var airbnbProject = new Project(
   null,
 );
 
-export var thingsProject = new Project(
+export const thingsProject = new Project(
   "Things",
   "Flutter,Node.js",
   thingsText,
