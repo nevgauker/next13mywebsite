@@ -35,6 +35,10 @@ import airbnb2 from "./public/images/projects/airbnb/2.png";
 import things1 from "./public/images/projects/things/1.png";
 import things2 from "./public/images/projects/things/2.png";
 
+import huli1 from "./public/images/projects/huliPizza/1.png";
+import huli2 from "./public/images/projects/huliPizza/2.png";
+
+
 import Technology from "./app/model/Techology";
 import Project from "./app/model/Project";
 
@@ -54,7 +58,8 @@ const blogText =
   "This is another personal project.  this is a blog based on node, mongo and express. This is my first node.js project which is not an api and i used mongodb atlas to store my db.";
 const airbnbText =
   "This is an airbnb clone based on React Native and AWS Amplify.";
-
+const huliText =
+  "Pizza ordering app mockup based on swiftui";
 const thingsText =
   "This is a platfom for 2-hand buying and selling in your close vacinity. Apps are avalible both google play and the app store. I maintain both dev and prodoction servers using heroku for the code, mongo atlas for the data and cloudinery for the storage.";
 
@@ -172,4 +177,16 @@ export const thingsProject = new Project(
   null,
   null,
   "https://apps.apple.com/il/app/thingss/id1634926379",
+);
+
+export const huliProject = new Project(
+  "HuliPizza",
+  "Swift",
+  huliText,
+  huli1,
+  huli2,
+  [swiftTechnology],
+  "https://github.com/nevgauker/HuliPizza",
+  null,
+  null,
 );

@@ -3,7 +3,13 @@
   height: 114px;
   align-self: center;
   justify-self: center;
+  padding: 0px;
+  margin: 0px;
+  margin-right: 10px;
+  margin-bottom: 5px;
 }
+
+
 
 @media (max-width: 768px) {
   .techImg {

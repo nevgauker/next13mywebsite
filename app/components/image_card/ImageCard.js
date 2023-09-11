@@ -7,14 +7,16 @@ import Image from "next/image";
 function ImageCard(props) {
   const { img, width } = props;
   return (
+
     <Image
-      width={width > 768 ? 114 : 60}
-      height={width > 768 ? 114 : 60}
-      layout="fixed"
       className={styles.techImg}
       src={img}
       alt="tech"
+      layout="cover"
     ></Image>
+
+  
+    
   );
 }
 

@@ -47,6 +47,7 @@ import {
   storeProject,
   blogProject,
   airbnbProject,
+  huliProject,
 } from "../data";
 
 import left from "../public/images/left.png";
@@ -96,6 +97,8 @@ function MainScreen() {
         <ProjectCard project={storeProject} />
         <ProjectCard project={blogProject} />
         <ProjectCard project={airbnbProject} />
+        <ProjectCard project={huliProject} />
+
       </Row>
     );
   }
@@ -108,6 +111,30 @@ function MainScreen() {
   function updateDimensions() {
     setWidth(window.innerWidth);
   }
+
+  //touch events
+  const [touchStart, setTouchStart] = useState(null)
+const [touchEnd, setTouchEnd] = useState(null)
+
+// the required distance between touchStart and touchEnd to be detected as a swipe
+const minSwipeDistance = 50 
+
+const onTouchStart = (e) => {
+  setTouchEnd(null) // otherwise the swipe is fired even with usual touch events
+  setTouchStart(e.targetTouches[0].clientX)
+}
+
+const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX)
+
+const onTouchEnd = () => {
+  if (!touchStart || !touchEnd) return
+  const distance = touchStart - touchEnd
+  const isLeftSwipe = distance > minSwipeDistance
+  const isRightSwipe = distance < -minSwipeDistance
+  if (isLeftSwipe || isRightSwipe) console.log('swipe', isLeftSwipe ? 'left' : 'right')
+  // add your conditional logic here
+}
+
 
   return (
     <main className={styles.bg}>
@@ -164,6 +191,7 @@ function MainScreen() {
                 height={50}
                 width={50}
                 alt="left arrowhead"
+                onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}
                 onClick={() => {
                   if (client === 0) {
                     setClient(2);
@@ -226,31 +254,14 @@ function MainScreen() {
               </Row>
             </Col>
             <Col md={6} sm={12}>
-              <Row className={styles.techRow}>
-                <Col className={styles.techCol}>
+              <Row >
                   <ImageCard img={flutter} width={width} />
-                </Col>
-
-                <Col className={styles.techCol}>
                   <ImageCard img={swift} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={objc} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={react} width={width} />
-                </Col>
-              </Row>
-              <Row className={styles.techRow}>
-                <Col className={styles.techCol}>
                   <ImageCard img={reactNative} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
-                  <ImageCard img={objc} width={width} />
-                </Col>
-                <Col className={styles.techCol}></Col>
-                <Col className={styles.techCol}></Col>
               </Row>
+              
             </Col>
           </Row>
           <Row className={styles.backendRow}>
@@ -270,34 +281,16 @@ function MainScreen() {
             </Col>
             <Col md={6} sm={12}>
               <Row className={styles.techRow}>
-                <Col className={styles.techCol}>
                   <ImageCard img={node} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={mongo} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={firebase} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={googleCloud} width={width} />
-                </Col>
-              </Row>
-              <Row className={styles.techRow}>
-                <Col className={styles.techCol}>
                   <ImageCard img={aws} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={django} width={width} />
-                </Col>
-                <Col className={styles.techCol}>
                   <ImageCard img={sql} width={width} />
-                </Col>
-                <Col className={styles.techCol}></Col>
               </Row>
             </Col>
           </Row>
-
           <Midmenu
             titles={["Projects", "Use Cases"]}
             selected={selected}
