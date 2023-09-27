@@ -184,13 +184,13 @@ const onTouchEnd = () => {
           </Row>
           <SectionTitle title={"What clients are saying..."} />
           <Row className={styles.feedbackRow}>
-            <Col className={styles.changeCol}  xs={1}>
-              <Image
+            <Col>
+              <div className={styles.arrowImageConatiner}>
+                <Image
                 className={styles.changeFeedbackImg}
-                src={left}
-                height={50}
-                width={50}
-                alt="left arrowhead"
+                  src={left}
+                  alt="left arrowhead"
+                  layout="fill"
                 onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}
                 onClick={() => {
                   if (client === 0) {
@@ -201,9 +201,11 @@ const onTouchEnd = () => {
                   setShowModal(!showModal);
                 }}
               />
+              </div>
             </Col>
-            <Col xs={10} md={10}>
-               <AnimatePresence mode="wait">
+            <Col md={8} sm={8} xs={8}>
+            
+             <AnimatePresence mode="wait">
                   <motion.div
                     key={clients[client].name}
                     initial={{ opacity: 0 }}
@@ -218,14 +220,19 @@ const onTouchEnd = () => {
                 </motion.div>
               </AnimatePresence>
             
+            
             </Col>
+              
+            <Col>
 
-            <Col className={styles.changeCol} xs={1}>
+            
+              <div className={styles.arrowImageConatiner}>
+              
+
               <Image
                 className={styles.changeFeedbackImg}
                 src={right}
-                height={50}
-                width={50}
+               layout="fill"
                 alt="righ arrowhead"
                 onClick={() => {
                   if (client === 2) {
@@ -236,7 +243,15 @@ const onTouchEnd = () => {
                   setShowModal(!showModal);
                 }}
               />
-            </Col>
+
+
+
+
+              </div>
+              
+              </Col>
+            
+           
           </Row>
 
           <SectionTitle title={"My Skills"} />
