@@ -151,7 +151,8 @@ function ContactFormScreen() {
         show={modalShow}
         onHide={() => setModalShow(false)}
       />
-    </Container>
+      </Container>
+     
   );
 }
 
