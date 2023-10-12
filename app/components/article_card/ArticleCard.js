@@ -4,7 +4,7 @@ import styles from "./ArticleCard.module.css";
 
 function ArticleCard({ title, subTitle ,link,text}) {
   return (
-      <Card className={styles.articleCard } style={{ width: '15rem' }}>
+      <Card className={styles.articleCard }>
       <Card.Body>
               <Card.Title>{ title }</Card.Title>
               <Card.Subtitle className="mb-2 text-muted">{ subTitle }</Card.Subtitle>

@@ -1,13 +1,19 @@
 .articleCard{
+    height: 300px;
     margin-left: 10px;
     margin-right: 10px;
     background-color: rgba(88, 170, 175, 1);
 
 }
-
-.artilesRow{
-    margin-bottom: 100px;
-}
 .articleLink{
     color:black !important;
+}
+
+@media (max-width: 768px) {
+.articleCard{
+    margin-bottom: 10px;
+  
+    
+}
+
 }

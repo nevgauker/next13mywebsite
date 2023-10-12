@@ -200,7 +200,18 @@
 
 }
 
+.footer{
+  margin-top: 50px;
+}
+.artilesRow{
+  align-items: start;
+
+}
 @media (max-width: 768px) {
+  .artilesRow{
+  justify-content: center !important;
+
+}
  .arrowImageConatiner{
   width: 35px;
   height: 35px;

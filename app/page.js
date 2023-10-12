@@ -327,13 +327,16 @@ const onTouchEnd = () => {
         <SectionTitle title={"Articles i wrote"} />
 
         <Row className={styles.artilesRow}>
-
-          <ArticleCard title="Scalability & Maintenance" subTitle="A Deep Dive into Clean Architecture" link="https://medium.com/@rotemnevgauker/scalability-maintenance-in-ios-8404b49931f7" text=" In the ever-evolving and changing world of iOS app development, creating software that is not only functional but also easy to maintain and scale is a paramount concern"/>
-          <ArticleCard title="Flutter for an IOS developer" subTitle="" link="https://medium.com/@rotemnevgauker/how-flutter-feels-to-an-experienced-ios-developer-ec4c456ceb2e" text="Here are my 2 cents on the matter of switching between them "/>
+          <Col xs={12} md={6} lg={4}>
+            <ArticleCard title="Scalability & Maintenance" subTitle="A Deep Dive into Clean Architecture" link="https://medium.com/@rotemnevgauker/scalability-maintenance-in-ios-8404b49931f7" text=" In the ever-evolving and changing world of iOS app"/>
+          </Col>
+          <Col xs={12} md={6} lg={4}>
+              <ArticleCard title="Flutter for an IOS developer" subTitle="" link="https://medium.com/@rotemnevgauker/how-flutter-feels-to-an-experienced-ios-developer-ec4c456ceb2e" text="Here are my 2 cents on the matter of switching between them "/>
+          </Col>
 
         </Row>
 
-        <footer>
+        <footer className={ styles.footer }>
           <Row>
             <Col md={12}>
               <h8 className={styles.copywrites}>
