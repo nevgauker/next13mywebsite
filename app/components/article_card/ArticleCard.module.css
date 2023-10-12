@@ -1,0 +1,13 @@
+.articleCard{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgba(88, 170, 175, 1);
+
+}
+
+.artilesRow{
+    margin-bottom: 100px;
+}
+.articleLink{
+    color:black !important;
+}
