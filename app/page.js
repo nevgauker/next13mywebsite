@@ -9,6 +9,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 
 //technologgies
 import flutter from "../public/images/technologies/flutter.png";
@@ -34,6 +35,7 @@ import ProjectCard from "./components/project_card/ProjectCard";
 
 import { useState, useEffect } from "react";
 
+import ArticleCard from "./components/article_card/ArticleCard";
 import { NextSeo } from "next-seo";
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -151,6 +153,7 @@ const onTouchEnd = () => {
                     <h2 className={styles.header2}>
                       Full Stack and iOS Developer
                     </h2>
+                    
                   </Row>
                   <Row>
                     <p className={styles.topTexts}>
@@ -165,6 +168,14 @@ const onTouchEnd = () => {
                       development I am able to help clients choose the right
                       technology stack for their needs.
                     </p>
+                    <Button className={styles.cvbutton} onClick={() => {
+                      const fileURL = '/cv/RotemNevgaukerCV.docx';
+                      const link = document.createElement('a');
+                      link.href = fileURL;
+                      link.download = 'MyCV.docx';
+                      link.click();
+
+                    }}>Download my CV</Button>
                   </Row>
                 </Col>
                 <Col sm={12} md={6} lg={6} className={styles.avatarCol}>
@@ -313,6 +324,14 @@ const onTouchEnd = () => {
           />
           {selected == 0 ? renderProjects() : renderUsecases()}
         </Col>
+        <SectionTitle title={"Articles i wrote"} />
+
+        <Row className={styles.artilesRow}>
+
+          <ArticleCard title="Scalability & Maintenance" subTitle="A Deep Dive into Clean Architecture" link="https://medium.com/@rotemnevgauker/scalability-maintenance-in-ios-8404b49931f7" text=" In the ever-evolving and changing world of iOS app development, creating software that is not only functional but also easy to maintain and scale is a paramount concern"/>
+          <ArticleCard title="Flutter for an IOS developer" subTitle="" link="https://medium.com/@rotemnevgauker/how-flutter-feels-to-an-experienced-ios-developer-ec4c456ceb2e" text="Here are my 2 cents on the matter of switching between them "/>
+
+        </Row>
 
         <footer>
           <Row>
